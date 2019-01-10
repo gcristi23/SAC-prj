@@ -1,0 +1,30 @@
+{% block body %}
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% else %}
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--Latest stable release of jQuery Core Library-->
+		<link rel="stylesheet" type="text/css" href="../static/styles.css">
+</head>
+<h3>Welcome to our game reccomendation system!</h3>
+<br>
+
+<h4>Login</h4>
+<form action="/login" method="POST">
+  <input type="email" name="email" placeholder="Email">
+  <input type="submit" value="Log in">
+</form>
+<br>
+<br>
+<h4>Sign Up</h4>
+<form action="/signup" method="POST">
+  <input type="email" name="email" placeholder="Email">
+  <input type="name" name="name" placeholder="Name">
+  <input type="submit" value="Sign up">
+</form>
+{% endif %}
+{% endblock %}

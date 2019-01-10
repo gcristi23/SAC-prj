@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--Latest stable release of jQuery Core Library-->
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+</head>
+<body>
+	<h3>Hello, {{ logged_user.name }}</h3>
+	<div><a href='/my_games'>My Games</a></div>
+	<br>
+	<div><a href='/logout'>Logout</a></div>
+
+
+	<h4>Input a game you've played</h4>
+	
+	<form action="{{ url_for('select') }}">
+			<input list=text_editors name="comp_select" class = "select" placeholder="Click to select game">
+			<!-- <span id="button1">▼</span> -->
+		<br>
+		<datalist id="text_editors" name="games">
+		    <select id="comp_select"  multiple size=8>
+		      {% for game in games %}
+		      	<option value="{{ game }}">{{ game }}</option>
+		      {% endfor %}
+		    </select>
+		 </datalist>
+	    <button type="submit">Insert</button>
+	</form>
+
+    <script>
+		button = document.getElementById('button1');
+		datalist = document.querySelector('datalist');
+		select = document.querySelector('select');
+		options = select.options;
+
+		/* on arrow button click, show/hide the DDL*/
+		button.addEventListener('click', toggle_ddl);
+
+		// function toggle_ddl() {
+		//   if (datalist.style.display === '') {
+		//     datalist.style.display = 'block';
+		//     this.textContent = "▲";
+		//     /* If input already has a value, select that option from DDL */
+		//     var val = input.value;
+		//     for (var i = 0; i < options.length; i++) {
+		//       if (options[i].text === val) {
+		//         select.selectedIndex = i;
+		//         break;
+		//       }
+		//     }
+		//   } else hide_select();
+		// }
+
+		/* when user selects an option from DDL, write it to text field */
+		select.addEventListener('change', fill_input);
+
+		function fill_input() {
+		  input.value = options[this.selectedIndex].value;
+		  hide_select();
+		}
+
+		/* when user wants to type in text field, hide DDL */
+		input = document.querySelector('input');
+		input.addEventListener('focus', hide_select);
+
+		function hide_select() {
+		  datalist.style.display = '';
+		  button.textContent = "▼";
+		}
+    </script>
+</body>

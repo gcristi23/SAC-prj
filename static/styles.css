@@ -1,0 +1,123 @@
+body {
+	text-align: center;
+	background-color: rgba(0, 255, 128, 0.5);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+}
+
+div {
+	left: -5px;
+	border-left: none;
+	cursor: default;
+}
+
+.game {
+	background-color: rgba(58, 58, 52, 0.1);
+
+	padding:10px;
+	margin:15px;
+	border-radius:15px;
+}
+
+.game:hover>.title {
+	font-size: 24px;
+	padding: 0px;
+}
+
+.title {
+	font-size: 20px;
+	padding:2.5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: Bold;
+}
+
+.rec {
+
+	display : inline-block;
+	background-color: rgba(125, 125, 100, 0.1);
+	width: 300px;
+	padding:10px;
+	margin:5px;
+	border-radius:15px;
+
+}
+
+.rec:hover {
+	background-color: rgba(125, 125, 100, 0.3);
+}
+
+.select {
+	width: 600px;
+	margin:20px;
+}
+
+input, button {
+	width: 250px;
+	height: 30px;
+	padding: 3px;
+	border: none;
+	background-color: rgba(255, 255, 255, 0.6);
+	border-radius: 10px;
+	padding: 5px;
+	outline: none;
+}
+
+select {
+	width: 258px;
+	position: relative;
+	left: -17px;
+	margin: 0;
+	border-top: none;
+	font-size:9pt;
+}
+
+datalist {
+	display: none;
+}
+
+option {
+	padding: 3px;
+}
+
+option:hover {
+	background-color: #11E8EA;
+}
+
+a {
+	text-decoration: none;
+	color:Black;
+	font-weight: bold;
+	font-size: 18px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius:15px;
+	
+	width: 200px;
+}
+
+a:hover {
+	background-color: rgba(255, 255, 255, 0.6);	
+	text-decoration: None;
+}
+
+.back{
+	padding: 20px;
+	text-align:left;
+}
+h3,
+h4 {
+
+	font-weight: bold;
+	font-size: 25px;
+	padding: 10px;
+	left: 10px;
+	margin: 30px;
+	text-align: center;
+}
+
+
+/* to hide datalist arrow in webkit */
+
+input::-webkit-calendar-picker-indicator {
+	display: none;
+}

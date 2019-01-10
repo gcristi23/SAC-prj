@@ -1,0 +1,25 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="../static/styles.css">
+</head>
+<body>
+	<div class = "back">
+		<a href='/'>&lt;- Back</a>
+	</div>
+	<h4>{{ user.name }}'s games:</h4>
+	<div name="games">
+		{% for game in games %}
+			<div class = "game">
+	  		<div class = "title"> {{ game[0] }}</div>
+			<br/>
+			Recommended:
+			<br/>
+			{% for rec in game[1] %}
+			<div class = "rec">
+				{{ rec }}
+			</div>
+	  		<br>
+			{% endfor %}
+		</div>
+	  	{% endfor %}
+	</div>
+</body>
