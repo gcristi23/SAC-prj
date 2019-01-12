@@ -5,21 +5,15 @@
 	<div class = "back">
 		<a href='/'>&lt;- Back</a>
 	</div>
-	<h4>{{ user.name }}'s games:</h4>
+	<h4>{{ user }}'s games:</h4>
 	<div name="games">
-		{% for game in games %}
-			<div class = "game">
-	  		<div class = "title"> {{ game[0] }}</div>
-			<br/>
 			Recommended:
 			<br/>
-			{% for rec in game[1] %}
+		{% for rec in games %}
 			<div class = "rec">
 				{{ rec }}
 			</div>
 	  		<br>
 			{% endfor %}
-		</div>
-	  	{% endfor %}
 	</div>
 </body>
